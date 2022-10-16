@@ -3,11 +3,13 @@
 
 int main(int argc, char **argv){
 
-  double a, b, result; char c;
+  double a = 0, b = 0, result = 0; char c = '+';
   
-  a = std::stod(argv[1]);
-  c = *argv[2];
-  b = std::stod(argv[3]);
+  if(argc > 3){
+    a = std::stod(argv[1]);
+    c = *argv[2];
+    b = std::stod(argv[3]);
+  }
 
   switch(c){
     case '+': result = a + b; break;
@@ -16,7 +18,7 @@ int main(int argc, char **argv){
     case '/': result = a / b; break;
   }
 
-  std::cout << "Result is: " << result << std::endl;
+  std::cout << a << ' ' << c << ' ' << b << " = " << result << std::endl;
 
   return 0;
 }
