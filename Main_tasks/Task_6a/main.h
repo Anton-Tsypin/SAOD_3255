@@ -11,7 +11,7 @@ class _data{
   _data(int sz, int *p = 0){
     nCount = 1;
     pData = new int[sz];
-    if(*p == 0){
+    if(p == 0){
       std::fill(pData, pData + sz, 0);
     }
     else{
@@ -82,7 +82,9 @@ class Array{
 
     Array* Reshape(int m, int n){
       if(m * n == rows * cols){
-        Array *reshaped = new Array(m, n, pDataRef -> pData);
+        Array *reshaped = new Array(m, n);
+        reshaped -> pDataRef -> Release();
+        reshaped -> pDataRef = this -> pDataRef;
         return reshaped;
       }
       else{

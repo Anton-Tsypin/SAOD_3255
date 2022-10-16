@@ -19,6 +19,8 @@ int main(){
   std::cout << "rows: " << test -> Rows() << " cols: " << test -> Cols() << std::endl;
   std::cout << "Array[1][0]: " << test -> Item(1, 0) << std::endl;
   std::cout << "Array[3][1]: " << test -> Item(3, 1) << std::endl;
+
+  // std::out_of_range
   // std::cout << "Array[999][999]: " << test -> Item(3, 3) << std::endl;
 
   Array *reshaped = test -> Reshape(2, 6);
@@ -29,6 +31,10 @@ int main(){
   std::cout << *test << std::endl << *reshaped;
 
   std::cout << std::endl;
+
+  // std::invalid_argument
+  // Array *error_reshaped = test -> Reshape(999, 999);
+  
   delete test;
   delete reshaped;
   return 0;
