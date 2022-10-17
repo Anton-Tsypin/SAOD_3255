@@ -38,7 +38,7 @@ int main(){
   std::cout << std::endl;
 
   Aggregate<Child>* a3 = new Aggregate<Child>;
-  delete a1;
+  delete a3;
 
   return 0;
 }
