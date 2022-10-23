@@ -20,9 +20,9 @@ int main(){
   for (int i = 0; i < count; ++i) mas[i] = new Test();
   std::cout << "\ncreating objects | objects: " << Test::nCount << '\n' << std::endl;
 
-  // delete[] mas;
   for (int i=0; i<3; i++){ delete mas[i]; }
   std::cout << "\ndeleting objects | objects: " << Test::nCount << '\n' << std::endl;
+  delete[] mas;
 
   foo(*test);
   std::cout << "delete object | objects: " << Test::nCount << '\n' << std::endl;
